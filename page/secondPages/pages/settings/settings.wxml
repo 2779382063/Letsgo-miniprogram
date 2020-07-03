@@ -1,0 +1,70 @@
+<!--page/secondPages/pages/settings/settings.wxml-->
+<view>
+
+  <view class='separateLinelarge' />
+
+  <view hover-stay-time='150' hover-class='section_hover_color' class='section'>
+    <view class='section_left'>帐号与安全</view>
+    <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+    <!-- <icon type='info' size='20' style='margin-right:20px;'/> -->
+  </view>
+
+  <view class='separateLine' />
+
+  <view hover-stay-time='150' hover-class='section_hover_color' class='section'>
+    <view class='section_left'>多语言</view>
+    <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+    <!-- <icon type='info' size='20' style='margin-right:20px;'/> -->
+  </view>
+  
+  <view class='separateLinelarge' />
+
+  <view hover-stay-time='150' hover-class='section_hover_color' class='section'>
+    <view class='section_left'>常用地址</view>
+    <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+    <!-- <icon type='info' size='20' style='margin-right:20px;'/> -->
+  </view>
+
+  <view class='separateLine' />
+
+  <view hover-stay-time='150' hover-class='section_hover_color' class='section'>
+    <view class='section_left'>消息推送设置</view>
+    <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+    <!-- <icon type='info' size='20' style='margin-right:20px;'/> -->
+  </view>
+
+  <view class='separateLine' />
+
+  <view hover-stay-time='150' hover-class='section_hover_color' class='section'>
+    <view class='section_left'>清除缓存</view>
+    <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+    <!-- <icon type='info' size='20' style='margin-right:20px;'/> -->
+  </view>
+
+  <view class='separateLinelarge' />
+
+  <view hover-stay-time='150' hover-class='section_hover_color' class='section'>
+    <view class='section_left'>关于来次</view>
+    <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+    <!-- <icon type='info' size='20' style='margin-right:20px;'/> -->
+  </view>
+
+  <view class='separateLine' />
+
+  <view hover-stay-time='150' hover-class='section_hover_color' class='section'>
+    <view class='section_left'>用户协议</view>
+    <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+    <!-- <icon type='info' size='20' style='margin-right:20px;'/> -->
+  </view>
+
+  <block wx:if='{{hasLogin === true}}'>
+    <view class='separateLinelarge' />
+
+    <view hover-stay-time='150' hover-class='section_hover_color' style='background-color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;height:50px;'>
+    
+      <view style='color:red;font-size:20px;'>退出登录</view>
+
+    </view>
+  </block>
+
+</view>

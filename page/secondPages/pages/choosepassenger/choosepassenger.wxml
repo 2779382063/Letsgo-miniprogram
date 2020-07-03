@@ -1,0 +1,55 @@
+<!--page/secondPages/pages/choosepassenger/choosepassenger.wxml-->
+<view>
+  <view style='margin-left:15px;margin-top:20px;font-size:15px;'>{{passenger_number}}位附近乘客</view>
+
+  <block wx:for="{{passenger}}" wx:for-item="passenger">
+    <view class='section'>
+      
+      <view class='section_first'>
+        <image mode='aspectFill' src='{{passenger.passenger_headicon}}' style='width:50px;height:50px;border-radius:50%;background-color:black;margin:15px 0px 15px 15px;'/>
+        <view style='display:flex;flex-direction:column;margin-left:8px;'>
+          <view style='display:flex;flex-direction:row;align-items:center;margin-bottom:2px;'>
+            <view style='width:72px;font-size:16px;'>{{passenger.passenger_name}}</view>
+            <image wx:if='{{passenger.passenger_gender}}' src='../../../common/image/man.png' style='width:18px;height:18px;'/>
+            <image wx:if='{{passenger.passenger_gender ===false}}' src='../../../common/image/female.png' style='width:18px;height:18px;'/>
+          </view>
+          <view style='display:flex;flex-direction:row;align-items:center;justify-content:center;width:70px;font-size:13px;margin-top:2px;border-style:solid;border-width:1px;border-color:#87CEFF;color:#87CEFF;'>信任值 {{passenger.passenger_credit}}</view>
+        </view>
+      </view>
+
+      <view style='height:1px;background-color:#CDCDCD;margin:0px 15px;'/>
+
+      <view>
+        <view class='section_second'>
+          <icon type='waiting' size='12' color='black'/>
+          <view class='section_second_right'>{{passenger.order_time}}</view>
+        </view>
+      </view>
+      
+      <view>
+        <view class='section_second'>
+          <icon type='info' size='12' color='green'/>
+          <view class='section_second_right'>{{passenger.start_from}}</view>
+        </view>
+      </view>
+      <view>
+        <view class='section_second'>
+          <icon type='info' size='12' color='orange'/>
+          <view class='section_second_right'>{{passenger.destination}}</view>
+        </view>
+      </view>
+
+      <view style='margin:15px;display:flex;flex-directon:row;justify-content:sapce-between;align-items:center;'>
+        <view style='width:50%;display:flex;flex-direction:row;justify-content:flex-start;align-items:center;'>
+          <view style='font-size:13px;color:gray;'>快车出行过{{passenger.travel_time}}次</view>
+        </view>
+        <view style='width:50%;display:flex;flex-direction:row;justify-content:flex-end;align-items:center;'>
+          <!-- <button plain='true' style='width:68px;font-size:9px;'>愿意接她</button> -->
+          <view wx:if='{{passenger.passenger_gender === true}}' style='height:25px;width:68px;font-size:10px;color:gray;border-style:solid;border-width:1px;border-color:gray;border-radius:5px;display:flex;flex-direction:row;align-items:center;justify-content:center;'>愿意接他</view>
+          <view wx:if='{{passenger.passenger_gender === false}}' style='height:25px;width:68px;font-size:10px;color:gray;border-style:solid;border-width:1px;border-color:gray;border-radius:5px;display:flex;flex-direction:row;align-items:center;justify-content:center;'>愿意接她</view>
+        </view>
+      </view>
+
+    </view>
+  </block>
+</view>

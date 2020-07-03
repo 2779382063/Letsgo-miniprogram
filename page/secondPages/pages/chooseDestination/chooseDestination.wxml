@@ -1,0 +1,22 @@
+<!--page/secondPages/pages/chooseDeparture/chooseDeparture.wxml-->
+<view>
+  <view style='background-color:white;display:flex;flex-direction:row;align-items:center;padding-bottom:10px;'>
+    <view style='display:flex;flex-direction:column;align-items:center;margin:5px 20px;'>{{locInfo.city}}</view>
+    <input placeholder='您要去哪' style='flex:0.6;' maxlength='20' confirm-type='搜索' bindconfirm='search'></input>
+  </view>
+  <view style='margin:10px 15px;background-color:white;border-radius:5px;box-shadow:0rpx 0rpx 1.5rpx 1.5rpx #CCCCCC;'>
+    <view wx:for='{{pois[0]}}'>
+      <view style='display:flex;flex-direction:row;align-items:center;margin-top:5px;margin-bottom:5px;' data-id='{{index}}' bindtap='chooseLocation'>
+        <image src='../../../../image/location.png' mode='aspectFill' style='margin:0px 10px;width:20px;height:20px' />
+        <view style='display:flex;flex-direction:column;'>
+          <view style='display:flex;flex-direction:row;align-items:center;font-size:20px;margin-top:5px;'>{{item.title}}</view>
+          <view style='display:flex;flex-direction:row;align-items:center;font-size:15px;color:gray;margin-top:5px;margin-bottom:5px;'>{{item.address}}</view>
+        </view>
+      </view>
+      <view class='separateLine' />
+    </view>
+  </view>
+  
+</view>
+
+

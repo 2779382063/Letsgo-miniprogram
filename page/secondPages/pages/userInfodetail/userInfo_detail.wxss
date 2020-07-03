@@ -1,0 +1,32 @@
+/* page/userInfo_detal/userInfo_detal.wxss */
+
+.separateLine{
+  height:1px;
+  background-color:#F0F0F0;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+.separateLinelarge{
+  height: 20px;
+}
+
+.section{
+  height: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.section_left{
+  width: 55px;
+  font-size: 13px;
+  margin: 10px;
+  margin-left: 20px;
+}
+
+.section_right{
+  margin: 10px;
+  height: 13px;
+}

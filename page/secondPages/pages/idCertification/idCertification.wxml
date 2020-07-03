@@ -1,0 +1,41 @@
+<!--page/secondPages/pages/idCertification/idCertification.wxml-->
+<view>
+
+  <view style='height:120px;display:flex;flex-direction:row;align-items:center;background-color:white;'>
+  
+    <image mode='aspectFill' src='../../resources/image/id_back.png' style='margin-left:20px;width:133px;height:80px;'/>
+    
+    <view>
+      <view style='font-size:20px;margin-left:20px;margin-bottom:5px;'>身份认证</view>
+      <view style='font-size:15px;margin-left:20px;margin-top:5px;color:gray;'>仅支持中国大陆居民身份证进行实名认证</view>
+    </view>
+
+  </view>
+
+  <view style='height:20px;'/>
+
+
+  <form bindsubmit='formSubmit'>
+    <view style='background-color:white;'>
+      <view class='section'>
+        <view class='section_notice'>真实姓名</view>
+        <view style='width:100%;display:flex;flex-direction:row;justify-content:center;'>
+          <input class='section_input' bindinput='bindIdNameInput' name='idname' type='text' maxlength='10' placeholder='填写身份证姓名'/>
+        </view>
+      </view>
+        
+      <view class='section'>
+         <view class='section_notice'>身份证号</view>
+        <input class='section_input' bindinput='bindIdNumberInput' name='idnumber' type='idcard' maxlength='18' placeholder='填写18位身份证号'/>
+       </view>
+
+      <view style='height:20px;'/>
+      
+    </view>
+
+    <button style='margin-top:40px;width:55vh' form-type='submit' type='primary' loading='{{submitComplete}}'>提交审核</button>
+
+  </form>
+  
+
+</view>

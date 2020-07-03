@@ -1,0 +1,31 @@
+{
+  "pages": [
+    
+    "page/map/map",
+    "page/secondPages/pages/login/login",
+    
+    "page/secondPages/pages/chooseDeparture/chooseDeparture",
+    "page/userInfo/userInfo",
+    "page/secondPages/pages/userInfodetail/userInfo_detail",
+    "page/secondPages/pages/settings/settings",
+    "page/secondPages/pages/idCertification/idCertification",
+    "page/secondPages/pages/driverCertification/driverCertification",
+    "page/secondPages/pages/wallet/wallet",
+    "page/secondPages/pages/travels/travels",
+    "page/secondPages/pages/choosepassenger/choosepassenger",
+
+    "page/secondPages/pages/chooseDestination/chooseDestination"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "来次出行",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#CDCDCD"
+  },
+    "permission": {
+     "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+    }
+}

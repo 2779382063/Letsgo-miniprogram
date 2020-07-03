@@ -1,0 +1,81 @@
+<!--page/userInfo_detal/userInfo_detal.wxml-->
+<view>
+
+  <form bindsubmit='sendUserInfo'>
+    <view style='background-color:white;'>
+      <view style='display:flex;align-items:center;justify-content:center;background-color:white;'>
+        <image src='{{user_Image}}' style='width:70px;height:70px;margin:30px;'/>
+      </view>
+
+      <view class='separateLine' />
+
+        <view class='section'>
+          <view class='section_left'>昵称</view>
+          <input class='section_right' name='nikename' maxlength='16' placeholder='请输入昵称'bindinput ="usenikename"value="{{usernikename}}"/>
+        </view>
+
+        <view class='separateLine' />
+
+        <view class='section'>
+          <view class='section_left'>性别</view>
+          <input class='section_right' name='gender' maxlength='16' placeholder='请输入性别' bindinput ="usegender"value="{{usergender}}"/>
+        </view>
+
+        <view class='separateLine' />
+
+        <view class='section'>
+          <view class='section_left'>年龄</view>
+          <input class='section_right' name='age' maxlength='16' placeholder='请输入年龄'bindinput ="useage"value="{{userage}}"/>
+        </view>
+    </view>
+
+    
+
+    <view class='separateLinelarge' />
+
+
+    <view style='background-color:white;'>
+      <view class='section'>
+        <!--view class='section_left' style='margin-right:20px;'>行业</view>
+
+        <!--view style='color:#CDCDCD;flex:1;'>添加您的行业</view>
+        <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+        <!-- <icon type='info' size='20' style='margin-right:20px;'/> -->
+      </view>
+
+      <view class='separateLine' />
+
+      <view class='section'>
+        <view class='section_left'>公司</view>
+        <input class='section_right' name='company' maxlength='16' placeholder='添加所在公司'bindinput ="usecompany"value="{{usercompany}}"/>
+      </view>
+
+      <view class='separateLine' />
+
+      <view class='section'>
+        <view class='section_left'>行业</view>
+        <input class='section_right' name='job' maxlength='16' placeholder='添加您的行业'bindinput ="usejob"value="{{userjob}}"/>
+      </view>
+
+      <view class='separateLine' />
+
+      <view class='section'>
+        <view class='section_left'>个性签名</view>
+        <input class='section_right' name='signature' maxlength='16' placeholder='还未填写个性签名，简单介绍一下自己吧'bindinput ="usesignature"value="{{usersignature}}"/>
+      </view>
+
+      
+    </view>
+
+    <view class='separateLinelarge' />
+
+    <view style='background:transparent;display:flex;flex-direction:row;align-items:center;justify-content:center;'>
+      <button type='primary' loading='{{loading}}' style='flex:1;' form-type='submit'>{{submitState}}</button>
+    </view>
+    
+  </form>
+
+  
+
+</view>
+

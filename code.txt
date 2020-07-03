@@ -1,0 +1,47 @@
+"subPackages": [
+    {
+      "root": "page/secondPages/",
+      "pages": [
+        "pages/userInfodetail/userInfo_detail",
+        "pages/settings/settings"
+      ]
+    }
+  ],
+
+  "page/secondPages/pages/settings/settings",
+  "page/secondPages/pages/userInfodetail/usetInfo_detail"
+
+
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "page/map/map",
+        "text": "地图"
+      },
+      {
+        "pagePath": "page/userInfo/userInfo",
+        "text": "我的"
+      }
+    ]
+  }
+
+
+
+  "subPackages": [
+    {
+      "root": "page/secondPages/",
+      "pages": [
+        "pages/userInfodetail/userInfo_detail",
+        "pages/settings/settings",
+        "pages/idCertification/idCertification",
+        "pages/driverCertification/driverCertification",
+        "pages/wallet/wallet",
+        "pages/travels/travels",
+        "pages/login/login"
+      ]
+    }
+  ],

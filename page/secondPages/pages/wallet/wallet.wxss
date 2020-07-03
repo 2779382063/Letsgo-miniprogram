@@ -1,0 +1,25 @@
+/* page/secondPages/pages/wallet/wallet.wxss */
+
+.separateLinelarge{
+  height:10px;
+}
+
+.section{
+  height: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section_left{
+  margin-left: 20px;
+  margin-right: 5px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}

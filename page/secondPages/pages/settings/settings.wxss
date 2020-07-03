@@ -1,0 +1,29 @@
+/* page/secondPages/pages/settings/settings.wxss */
+.separateLine{
+  height:1px;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+.separateLinelarge{
+  height: 10px;
+}
+
+.section{
+  height: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section_left{
+  margin-left: 20px;
+  font-size: 13px;
+}
+
+.section_hover_color{
+  background-color: #9C9C9C;
+  opacity: 0.9;
+}

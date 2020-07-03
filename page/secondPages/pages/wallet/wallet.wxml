@@ -1,0 +1,35 @@
+<!--page/secondPages/pages/wallet/wallet.wxml-->
+<view>
+
+  <view class='separateLinelarge' />
+
+  <view class='section'>
+    <view class='section_left'>
+      <view style='font-size:18px;'>支付方式</view>
+      <view style='font-size:12px;color:gray;'>{{payment}}</view>
+    </view>
+    <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+    <!-- <icon style='margin-right:20px;' type='info' color='red' size='20' /> -->
+  </view>
+
+  <view class='separateLinelarge' />
+
+  <view class='section'>
+    <view class='section_left'>
+      <view style='font-size:18px;'>余额</view>
+      <view style='font-size:12px;color:gray;'>{{balance}}元</view>
+    </view>
+    <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+    <!-- <icon style='margin-right:20px;' type='info' color='red' size='20' /> -->
+  </view>
+
+  <view class='section'>
+    <view class='section_left'>
+      <view style='font-size:18px;'>优惠券</view>
+      <view style='font-size:12px;color:gray;'>{{coupon}}张</view>
+    </view>
+    <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:20px;height:20px;width:20px;'/>
+    <!-- <icon style='margin-right:20px;' type='info' color='red' size='20' /> -->
+  </view>
+
+</view>

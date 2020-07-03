@@ -1,0 +1,39 @@
+<!--page/secondPages/pages/travels/travels.wxml-->
+<view>
+
+  <view style='margin-left:15px;margin-top:20px;font-size:15px;'>已完成订单</view>
+
+
+  <view wx:for="{{order}}" wx:for-item="order">
+  
+    <view class='section'>
+        <view class='section_first'>
+          <view class='section_first_left'>
+            <view style='font-size:18px;'>{{order.order_type}}</view>
+            <view style='font-size:13px;color:gray'>{{order.order_state}}</view>
+          </view>
+          <image mode='aspectFill' src='../../../common/image/forward.png' class='section_firse_right' style='height:15px;width:15px;'/>
+          <!-- <icon type='info' size='15' class='section_first_right'/> -->
+        </view>
+        
+        <view class='section_second'>
+          <icon type='waiting' color='gray' size='10'/>
+          <view class='section_second_right'>{{order.order_time}}</view>
+        </view>
+
+        <view class='section_second'>
+          <icon type='info' color='green' size='10'/>
+          <view class='section_second_right'>{{order.start}}</view>
+        </view>
+
+        <view class='section_second'>
+          <icon type='info' color='orange' size='10'/>
+          <view class='section_second_right'>{{order.destination}}</view>
+        </view>
+    </view> 
+
+  </view>
+  
+  
+
+</view>

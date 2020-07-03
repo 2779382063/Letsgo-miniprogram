@@ -1,0 +1,8 @@
+/* page/secondPages/pages/chooseDeparture/chooseDeparture.wxss */
+.separateLine{
+  height:1px;
+  margin-left:20px;
+  margin-right:20px;
+  background-color: #F0F0F0;
+}
+

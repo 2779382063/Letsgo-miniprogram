@@ -1,0 +1,76 @@
+<!--page/userInfo/.wxml-->
+<view class='window'>
+  
+  <view class='head' style='flex-direction:column;'>
+  
+    <block wx:if='{{userInfo === true}}'>
+      <!--view style='flex-direction:column;align-items:center;' bindtap='to_userInfo_detail'>
+        <view style='display:flex;flex-direction:row;justify-content:center;'>
+          <image class='userinfo_image' src='{{user_Image}}' style='width:70px;height:70px;'></image>
+        </view>
+        <view class='userinfo_nickname'>{{nikename}}</view>
+      </view!-->
+       <open-data class="avatar-img" type="userAvatarUrl" lang="zh_CN"></open-data>
+       <open-data type="userNickName" lang="zh_CN"></open-data>
+    </block>
+
+    <block wx:if='{{userInfo === false}}'>
+      
+      <view style='flex-direction:column;align-items:center;' bindtap='to_login'>
+        <view style='display:flex;flex-direction:row;justify-content:center;'>
+          <image class='userinfo_image' src='{{default_user_Image}}' style='width:70px;height:70px;'></image>
+        </view>
+        <view class='userinfo_nickname' style='color:gray;'>点 击 登 录</view>
+      </view>
+    </block>
+    
+  
+  </view>
+
+  <view class='section' style='flex-direction:column;'>
+    
+    
+ <view hover-stay-time='150' hover-class='section_hover_color' class='section_userinfo' bindtap='to_userInfo'>编辑资料</view>
+    <view hover-stay-time='150' hover-class='section_hover_color' class='section_userinfo' bindtap='to_travels'>我的行程</view>
+    <view hover-stay-time='150' hover-class='section_hover_color' class='section_userinfo' bindtap='to_wallet'>我的钱包</view>
+    <view hover-stay-time='150' hover-class='section_hover_color' class='section_userinfo'>客服</view>
+    <view hover-stay-time='150' hover-class='section_hover_color' class='section_userinfo' bindtap='to_settings'>设置</view>
+
+  </view>
+
+  <view style='height:10px;'/>
+
+  <view class='section' style="flex-direction:column;">
+  
+    <view class='section_head'>认证</view>
+    <view hover-stay-time='150' hover-class='section_hover_color' class='section_menber' id='first' bindtap='to_driverCertification' style='margin-top:0px;'>车主认证</view>
+    <view hover-stay-time='150' hover-class='section_hover_color' class='section_menber' bindtap='to_idCerfitication'>实名认证</view>
+  
+  </view>
+
+  <view style='height:10px;'/>
+
+  <view class='section' style='flex-direction:column'>
+  
+    <view class='section_head'>出行</view>
+
+    <block wx:if='{{hasLogin === true}}'>
+      <view style='background-color:white;height:40px;padding-left:10px;'>
+        <view class='section_menber_credit' style='font-size:15px;'>信任值</view> 
+        <progress percent="{{credit}}" color="#10AEFF" active stroke-width="3" style='width:70px;margin-top:5px;'/>
+      </view>
+
+      <view hover-stay-time='150' hover-class='section_hover_color' style='background-color:white;padding-left:10px;'>
+        <view style='font-size:18px;'>评价</view>
+        <view style='display:flex;flex-wrap:wrap;'>
+        <view class='section_menber_comment' wx:for="{{array}}">{{item}}</view>
+        </view>
+      </view>
+    </block>
+    <block wx:if='{{hasLogin === false}}'>
+      <view style='background-color:white;color:gray;height:50px;display:flex;flex-direction:cloumn;align-items:center;justify-content:center;padding-bottom:20px;'>登录后查看</view>
+    </block>
+
+  </view>
+
+</view>

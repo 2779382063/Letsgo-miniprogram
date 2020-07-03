@@ -1,0 +1,86 @@
+/* page/map/.wxss */
+.type{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/**index.wxss**/
+.container{
+  box-sizing: border-box;
+  padding: 0 0;
+}
+.page-body-button{
+  padding: 0 30rpx;
+}
+
+.cover-view {
+  width: 40px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  background-color: #cdcdcd;
+  color: #000;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choose {
+  background-color: #cdcdcd;
+}
+
+.choose-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.choose-location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  color: gray;
+}
+
+.choose-time-1{
+  position: relative;
+  text-align: center;
+  width:58px;
+  height:30px; 
+  padding-top: 7px;
+  border-color: gray;
+  border-width: 1rpx;
+  border-radius: 46%;
+  
+}
+
+.choose-time-2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+}
+
+.L1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 8px; 
+}
+
+.reset{
+  background-color: gray;
+  opacity: 0.9;
+}
+
+.click{
+  opacity: 0.8
+}

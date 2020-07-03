@@ -1,0 +1,31 @@
+/* page/secondPages/pages/choosepassenger/choosepassenger.wxss */
+.section{
+  background-color: white;
+  margin: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border-radius: 5px;
+}
+
+.section_first{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.section_second{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  margin-top:18px;
+  margin-left:15px;
+}
+
+.section_second_right{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  margin-left: 15px;
+  font-size: 17px;
+}

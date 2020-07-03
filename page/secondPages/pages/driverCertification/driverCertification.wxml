@@ -1,0 +1,40 @@
+<!--page/secondPages/pages/driverCertification/driverCertification.wxml-->
+<view>
+
+  <view style='display:flex;flex-direction:column;'>
+    <view class='section_bindaccount'>
+      <image mode='aspectFill' src='../../resources/image/step1.png' style='height:30px;width:30px;margin-left:10px;'/>
+      <view class='section_bindaccount_middle'>
+        <view style='font-size:20px;'>绑定共享汽车帐号</view>
+        <view hover-class='bind_hover_color' hover-stay-time='150' style='font-size:13px;color:#5CACEE'>点击绑定</view>
+      </view>
+      <image mode='aspectFill' src='../../../common/image/forward.png' style='margin-right:10px;height:20px;width:20px;'/>
+      <!-- <icon type='info' color='red' size='20' style='margin-right:10px;'/> -->
+    </view>
+
+    <view style='height:10px;'/>
+
+    <view class='section_upload_liscence_notice'>
+      <image mode='aspectFill' src='../../resources/image/step2.png' style='height:30px;width:30px;margin-left:10px;'/>
+      <view style='font-size:20px;margin-left:10px;'>上传证件信息</view>
+    </view>
+
+    <view class='section_upload_liscence'>
+      <view wx:if="{{!hasDriverLiscence}}">
+        <image bindtap='chooseLiscencePicture' mode='aspectFill' src='{{defaultLiscencePictureUrl}}' style='width:175px;height:125px;margin-bottom:20px;'/>
+      </view>
+      <view wx:else>
+        <image bindtap='previewLiscencePicture' mode='aspectFill' src='{{defaultLiscencePictureUrl}}' style='width:175px;height:125px;margin-bottom:20px;'/>
+      </view>
+    </view>
+
+    <view style='flex:1;height:50px;'/>
+
+    <view style='display:flex;flex-direction:row;align-items:center;'>
+      <button hover-class='button_hover_color' bindtap='sendCertificationInfo' size='default' type='default' style='color:white;background-color:#4D4D4D;width:50vh;'>提交认证</button>
+    </view>
+  </view>
+  
+  
+
+</view>

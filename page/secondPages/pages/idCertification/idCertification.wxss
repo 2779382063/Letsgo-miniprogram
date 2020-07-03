@@ -1,0 +1,24 @@
+/* page/secondPages/pages/idCertification/idCertification.wxss */
+
+.section{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.section_input{
+  height: 30px;
+  width: 90%;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #CCCCCC;
+  border-radius:6px;
+  box-shadow:0rpx 0rpx 1rpx 1rpx #CCCCCC;
+  align-self: center;
+}
+
+.section_notice{
+  font-size: 15px;
+  margin: 10px 20px;
+}

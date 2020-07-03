@@ -1,0 +1,115 @@
+<!--index.wxml-->
+<view>
+  <view>
+    <view style='background-color:white;height:35px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;'>
+      <image mode='aspectFill' src='../common/image/myhead.png' style='height:33px;width:33px;margin-left:10px;' bindtap='to_userInfo'/>
+      <view style='font-size:15px;'>{{loc_city}}</view>
+      <image mode='aspectFill' src='../common/image/messege.png' style='height:25px;width:25px;margin-right:10px;'/>
+    </view>
+    <view style='width:100%;font-size:15px;background-color:white;height:35px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;'>
+      <view class='type' style='margin-left:10px;width:33%'>快车</view>
+      <view style='width:0px;height:20px;border-left-style:solid;border-width:0.5px;border-color:gray;'/>
+      <view class='type' style='width:34%;color:gray;' bindtap='to_free_ride'>顺风车</view>
+      <view style='width:0px;height:20px;border-left-style:solid;border-width:0.5px;border-color:gray;'/>
+      <view class='type' style='margin-right:10px;width:33%;color:gray;' bindtap='to_taxi'>出租车</view>
+    </view>
+    <view style='width:100%;font-size:15px;background-color:white;height:35px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;'>
+      <view class='type' id='passenger' bindtap='to_switch' style='height:32.5px;margin-left:10px;width:33%;border-bottom-style:{{border_bottom_style_passenger}};border-bottom-width:{{border_bottom_width_passenger}};border-bottom-color:{{border_bottom_color_passenger}};color:{{color_passenger}};'>乘客</view>
+      <view class='type' id='driver' bindtap='to_switch' style='height:32.5px;width:34%;border-bottom-style:{{border_bottom_style_driver}};border-bottom-width:{{border_bottom_width_driver}};border-bottom-color:{{border_bottom_color_driver}};color:{{color_driver}};'>车主</view>
+      <view class='type' style='margin-right:10px;width:33%;color:gray;'></view>
+    </view>
+      
+    
+  </view>
+
+  <view class="container" style='height:{{sysInfo.height-sysInfo.th}}px;background-color:gray;display:flex;flex-direction:column;'>
+    <map
+        id="myMap"
+        show-location
+        latitude='{{27}}'
+        longitude='{{112}}'
+        style="width: 100%; height: {{sysInfo.height-sysInfo.th-165-2}}px;"
+        scale="{{map.scale}}"
+        bindupdated="moveToGPSLocation"
+        bindregionchange="getCenterLocation"
+        markers='{{markers}}'
+      >
+      <cover-view class="center" style='width: {{sysInfo.width/375*50}}px;height: {{sysInfo.width/375*50}}px;margin-top: {{(sysInfo.height-sysInfo.th-165-2)/2-(sysInfo.width/375)*50/2-sysInfo.width/375*50*0.3}}px;margin-left: {{sysInfo.width/2-sysInfo.width/375*50/2}}px'>
+          <cover-image wx:if='{{hiding == false}}' class="center-image" src="/image/location.png" />
+      </cover-view>
+      <!-- <cover-view class="cover-view"  style='height:30px;width:{{sysInfo.width}}px;margin-top: {{(sysInfo.height-sysInfo.th-165-2)/2-60}}px;display:flex;flex:column;align-items:center;justify-content:space-between;background-color:rgba(0,0,0,0);'>
+          <cover-view style='width:130px;display:flex;flex:column;align-items:center;height:30px;background-color:white;border-top-right-radius:15px;border-bottom-right-radius:15px;' hover-class='reset'>重新选择始发地</cover-view>
+          <cover-image class="center-image" src="/image/goback.png" style='height:30px;width:30px;margin-right: 20px' bindtap='moveToMyLocation'/>
+      </cover-view> -->
+      
+      <cover-view wx:if='{{confirmorder == true}}' style='position:absolute;padding-top:7px;font-size:15px;width:110px;height:25px;background-color:#DEDEDE;margin-top: {{(sysInfo.height-sysInfo.th-165-2)/2-60}}px;opacity:0.8;' bindtap='resetOrder'>重新选择始发地</cover-view>
+
+      <cover-image id='moveToMyLocation' class="center-image" src="/image/goback.png" style='position:absolute;height:30px;width:30px;margin-top: {{(sysInfo.height-sysInfo.th-165-2)/2-60}}px;margin-left:{{sysInfo.width-50}}px;' bindtap='moveToMyLocation'/>
+
+    </map>
+
+    <view>
+      <block wx:if='{{second_page_number == 0}}'>
+        <view wx:if='{{confirmorder == true}}' style='background-color:white;height:167px'>
+          <view style='color:#87CEFF;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;'>
+            <view style='font-size:17px;'>预计</view>
+            <view style='margin-top:5px;font-size:25px;'>15.3元</view>
+          </view>
+          
+          <view style='display:flex;flex-direction:column;align-items:center;'>
+            <view style='height:40px;width:50vh;background-color:#4D4D4D;border-radius:15rpx;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;' hover-class='click' hover-stay-time='100'>确认发布</view>
+          </view>
+        </view>
+
+        <view wx:else class="choose" style='width:100%'>
+            
+            
+          <view class="choose-time" style='height:65px' bindtap='moveToMyLocation'>
+
+            <view style='height:40px;display:flex;flex-direction:row'>
+                  <view id='now' class="choose-time-1" style='border-style:{{choose_time_border_1}};color:{{choose_time_color_1}};margin-right:6px;' bindtap='changeColor'>现在</view>
+                  <view id='reservation' class="choose-time-1" style='border-style:{{choose_time_border_2}};color:{{choose_time_color_2}};margin-left:6px;' bindtap='changeColor'>预约</view>
+            </view>
+
+            <view class="choose-time-2" wx:if="{{choose_flag}}">
+
+              <view><image style='height:20px;width:26px;padding-top:5px;margin-right:5px' src='/image/clock.png'></image></view>
+              <picker   mode="multiSelector" range="{{multiArray}}" value='{{multiIndex}}' style='font-size:15px;height:23px;color:grad;line-height: 20px;color:gray' bindchange='bindPickerChange' bindcolumnchange='bindMultiPickerColumnChange' bindtap='bindClick'>{{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}} {{multiArray[2][multiIndex[2]]}}
+              </picker>
+
+            </view>
+            
+          </view>
+
+
+          <view style='background-color:white;margin-top:1px;'>
+            <view class='L1'>
+              <view><image style='height:20px;width:20px;padding-top:7px;margin-right:8px' src='/image/greenPoint.png'></image></view>
+              <view class="choose-location" style='height:50px;background-color:white' bindtap='gotoChooseDeparture'>{{str}}</view>
+            </view>
+
+            <view class='L1' style='margin-top:1px;'>
+              <view><image style='height:20px;width:20px;padding-top:7px;margin-right:8px' src='/image/bluePoint.png'></image></view>
+              <view class="choose-location" style='height:50px;background-color:white' bindtap='gotoChooseDestination'>{{desti}}</view>
+            </view>
+          </view>
+          
+        </view>
+      </block>
+
+      <block wx:if='{{second_page_number == 1}}'>
+        <view style='background-color:white;height:167px;display:flex;align-items:center;justify-content:center;'>
+          <view style='height:40px;width:50vh;background-color:#00B2EE;border-radius:15rpx;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;' hover-class='click' hover-stay-time='100' bindtap='to_choosepassenger'>选择乘客</view>
+        </view>
+      </block>
+    </view>
+    
+    
+    
+    
+
+
+
+  </view>
+
+</view>
